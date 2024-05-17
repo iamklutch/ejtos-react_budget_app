@@ -48,16 +48,28 @@ const AllocationForm = (props) => {
                   </div>
                   <select className="custom-select" id="inputGroupSelect02" onChange={(event) => setAction(event.target.value)}>
                         <option defaultValue value="Add" name="Add">Add</option>
-                <option value="Reduce" name="Reduce">Reduce</option>
+                  <option value="Reduce" name="Reduce">Reduce</option>
                   </select>
+                  <div className="input-group-prepend" style={{ marginLeft: '1rem' }}>
+                <label className="input-group-text" htmlFor="inputGroupSelect02">$</label>
+                  </div>
                     <input
                         required='required'
                         type='number'
                         id='cost'
                         value={cost}
-                        style={{ marginLeft: '2rem' , size: 10}}
+                        style={{ marginRight: '1rem' , size: 10}}
                         onChange={(event) => setCost(event.target.value)}>
                         </input>
+                <div className="input-group-prepend" style={{ marginLeft: '2rem' }}>
+                  <label className="input-group-text" htmlFor="inputGroupSelect02">Currency</label>
+                  </div>
+                  <select className="custom-select" id="inputGroupSelect02" onChange={(event) => setAction(event.target.value)}>
+                        <option defaultValue value="Dollar" name="Dollar">$ Dollar</option>
+                  <option value="Pound" name="Pound">£ Pound</option>
+                  <option value="Euro" name="Euro">€ Euro</option>
+                  <option value="Ruppee" name="Ruppee">₹ Ruppee</option>
+                  </select>
                     <button className="btn btn-primary" onClick={submitEvent} style={{ marginLeft: '2rem' }}>
                         Save
                     </button>
